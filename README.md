@@ -5,8 +5,8 @@ This is sort of a mini library, built in C to develop problem solving skills.
 
 We receive some hints and rules about each functions, which was enough to produce the library bellow.
 
-Please, find bellow the list of functions.
-
+### Please, find bellow the list of functions.
+```
 Mandatory part
 Part I
 ft_atoi
@@ -33,7 +33,9 @@ ft_strnstr
 ft_strrchr
 ft_tolower
 ft_toupper
+```
 
+```
 Part II
 ft_itoa
 ft_putchar_fd
@@ -45,7 +47,9 @@ ft_strjoin
 ft_strmapi
 ft_strtrim
 ft_substr
+```
 
+```
 Bonus part
 ft_lstadd_back
 ft_lstadd_front
@@ -56,7 +60,9 @@ ft_lstlast
 ft_lstmap
 ft_lstnew
 ft_lstsize
+```
 
+```
 Addtional part
 ft_isblank
 ft_iscntrl
@@ -99,3 +105,4 @@ ft_strnew
 ft_strstr
 ft_strtok
 ft_strupcase
+```
