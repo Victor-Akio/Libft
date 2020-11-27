@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 02:50:28 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/15 02:50:55 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:43 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:44 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char		*str_copy;
-	size_t		i;
+	t_list *ptr;
 
-	str_copy = malloc(sizeof(*str_copy) * (n + 1));
-	if (!str_copy)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0' && i < n)
+	if (*lst == NULL || del == NULL)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
 	{
-		str_copy[i] = s1[i];
-		i++;
+		*lst = ptr;
+		ft_lstdelone(*lst, del);
+		ptr = ptr->next;
 	}
-	str_copy[i] = '\0';
-	return (str_copy);
+	*lst = NULL;
 }

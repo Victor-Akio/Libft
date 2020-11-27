@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 17:01:59 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/01/27 18:58:29 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:58:31 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:58:32 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if (c >= 0000 && c <= 0177)
-		return (1);
-	return (0);
+	if (!(c >= 0 && c <= 127))
+		return (0);
+	return (1);
 }

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 15:02:03 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/12 13:43:44 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/08/13 04:27:38 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/08/13 18:07:51 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isupper(int c)
+int				ft_arraylen(char **str)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else
-		return (0);
+	int		i;
+
+	i = 0;
+	while (str && str[i])
+		i++;
+	return (i);
 }

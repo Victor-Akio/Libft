@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_iswall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 13:27:15 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/13 13:42:57 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/08/29 23:44:24 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/08/29 23:45:27 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcapitalize(char *str)
+int					ft_iswall(int c)
 {
-	int		i;
-
-	i = 0;
-	str[i] = ft_toupper(str[i]);
-	while (str[++i])
-	{
-		str[i] = ft_tolower(str[i]);
-		if (!ft_isalnum(str[i - 1]))
-			str[i] = ft_toupper(str[i]);
-	}
-	return (str);
+	if (c == '1' || c == ' ')
+		return (1);
+	return (0);
 }

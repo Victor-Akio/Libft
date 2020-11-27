@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 18:12:29 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/01/28 18:19:04 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:22 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:24 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-	{
-		lst = lst->next;
-	}
+	if (lst)
+		while (lst->next != NULL)
+			lst = lst->next;
 	return (lst);
 }

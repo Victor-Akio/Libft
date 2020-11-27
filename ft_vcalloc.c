@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_vcalloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 17:33:30 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/01/28 17:39:43 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/08/19 21:09:40 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/08/19 21:10:04 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int					*ft_vcalloc(size_t count, int value)
 {
-	t_list	*list;
+	size_t		i;
+	int			*mem;
 
-	list = malloc(sizeof(t_list));
-	if (!list)
+	i = 0;
+	if (!(mem = (int*)malloc(count * sizeof(int))))
 		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	while (i < count)
+	{
+		mem[i] = value;
+		i++;
+	}
+	return (mem);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 18:01:56 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/01/29 17:25:20 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/08/20 07:27:36 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/08/20 07:27:46 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int		ft_intlen(int n)
 {
-	int		count;
+	int	i;
 
-	if (!lst)
-		return (0);
-	count = 0;
-	while (lst)
+	i = 1;
+	while (n > 0)
 	{
-		count++;
-		lst = lst->next;
+		n = n / 10;
+		i++;
 	}
-	return (count);
+	return (i);
 }

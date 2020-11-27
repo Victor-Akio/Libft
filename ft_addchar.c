@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_addchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 11:34:00 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/13 12:23:04 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/20 04:07:44 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:59:42 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		ft_str_is_alpha(char *str)
+char			*ft_addchar(char *str, char c)
 {
-	unsigned int	i;
+	char		*res;
+	int			len;
+	int			i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-			return (0);
-		++i;
-	}
-	return (1);
+	i = -1;
+	len = ft_strlen(str);
+	res = ft_calloc(len + 2, sizeof(char));
+	while (++i < len)
+		res[i] = str[i];
+	res[i] = c;
+	free(str);
+	return (res);
 }

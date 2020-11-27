@@ -106,3 +106,17 @@ ft_strstr
 ft_strtok
 ft_strupcase
 ```
+
+```
+Further Projects
+ft_addchar.c
+ft_addstr.c
+ft_arraylen.c
+ft_free.c
+ft_freearray.c
+ft_intlen.c
+ft_iswall.c
+ft_vcalloc.c
+get_next_line.c
+
+```

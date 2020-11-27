@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 14:37:12 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/15 02:41:45 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:53:52 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:53:54 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*str;
+	char			*result;
 
-	if (!s || !f)
-		return (NULL);
-	str = malloc(ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (s[i])
+	if (s == NULL || f == NULL)
+		return (NULL);
+	if (!(result = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (0);
+	while (s[i] != '\0')
 	{
-		str[i] = (*f)(i, s[i]);
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	result[i] = '\0';
+	return (result);
 }

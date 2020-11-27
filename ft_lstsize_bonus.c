@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 12:14:52 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/13 12:31:11 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:08 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:09 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			ft_str_is_printable(char *str)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	int count;
 
-	i = 0;
-	while (str[i] != '\0')
+	count = 0;
+	while (lst != NULL)
 	{
-		if (str[i] < 32 || str[i] > 126)
-			return (0);
-		++i;
+		lst = lst->next;
+		count++;
 	}
-	return (1);
+	return (count);
 }

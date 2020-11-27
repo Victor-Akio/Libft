@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 03:58:03 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/15 03:58:45 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:17 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:18 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strupcase(char *str)
+t_list	*ft_lstnew(void *content)
 {
-	int		i;
+	t_list *new;
 
-	i = 0;
-	while (str[i])
-	{
-		str[i] = ft_toupper(str[i]);
-		i++;
-	}
-	return (str);
+	if (!(new = malloc(sizeof(t_list))))
+		return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

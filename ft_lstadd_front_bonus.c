@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 16:56:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/13 16:57:53 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:49 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:50 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcat(char *dest, char *src)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	int i;
-	int j;
-
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0')
+	if (*alst != NULL)
 	{
-		dest[i + j] = src[j];
-		j++;
+		new->next = *alst;
+		*alst = new;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	else if (new != NULL)
+		*alst = new;
 }

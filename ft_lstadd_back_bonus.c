@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 16:59:12 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/13 17:00:53 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:56 by vminomiy          #+#    #+#             */
+/*   Updated: 2020/11/27 16:57:59 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	if (s)
-		while (*s)
-			*s++ = '\0';
+	t_list *ptr;
+
+	if (*alst != NULL)
+	{
+		ptr = *alst;
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = new;
+	}
+	else if (new != NULL)
+		*alst = new;
 }
