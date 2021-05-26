@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 08:32:32 by hbuisser          #+#    #+#             */
-/*   Updated: 2020/08/19 22:24:26 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/05/05 01:01:59 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_strchar(char *str, char c)
+int	ft_strchar(char *str, char c)
 {
 	int		i;
 
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		if (str[i] == c)
 			return (i);
 		i++;
 	}
-	if (str[i] == c)
+	if (str && str[i] == c)
 		return (i);
 	return (-1);
 }
 
-char			*ft_gnljoin(char *s1, char *s2)
+char	*ft_gnljoin(char *s1, char *s2)
 {
 	char	*res;
 	int		i;
@@ -56,7 +56,7 @@ char			*ft_gnljoin(char *s1, char *s2)
 	return (res);
 }
 
-int				ft_getpos(char **str, char **line)
+int	ft_getpos(char **str, char **line)
 {
 	int		pos;
 	char	*tmp;
@@ -66,8 +66,9 @@ int				ft_getpos(char **str, char **line)
 	{
 		*line = ft_substr(*str, 0, pos);
 		tmp = *str;
-		*str = ft_substr(*str, pos +1, ft_strchar(*str,'\0'));
+		*str = ft_substr(*str, pos + 1, ft_strchar(*str, '\0'));
 		free(tmp);
+		free(*str);
 		return (1);
 	}
 	else
@@ -78,7 +79,7 @@ int				ft_getpos(char **str, char **line)
 	}
 }
 
-int				get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char		buff[BUFFER_SIZE + 1];
 	static char	*str;
@@ -86,9 +87,11 @@ int				get_next_line(int fd, char **line)
 
 	if (!line)
 		return (-1);
-	if (!(str) && !(str = ft_calloc(1, sizeof(char))))
+	str = ft_calloc(1, sizeof(char));
+	if (!str)
 		return (-1);
-	while (ft_strchar(str, '\n') < 0 && (ret = read(fd, buff, BUFFER_SIZE)) > 0)
+	ret = read(fd, buff, BUFFER_SIZE);
+	while (ret > 0 && (ft_strchar(str, '\n') < 0))
 	{
 		buff[ret] = '\0';
 		str = ft_gnljoin(str, buff);

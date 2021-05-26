@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 22:23:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2021/04/26 20:37:09 by vminomiy         ###   ########.fr       */
+/*   Created: 2021/03/27 03:02:49 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/04/25 22:34:31 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int	ft_isnbr(char *s)
 {
-	free(*ap);
-	*ap = (NULL);
+	int		i;
+
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i])
+	{
+		if (ft_isdigit(s[i]) != 1)
+			return (0);
+		i++;
+	}
+	return (1);
 }

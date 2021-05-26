@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_findchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 22:23:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2021/04/26 20:37:09 by vminomiy         ###   ########.fr       */
+/*   Created: 2021/01/14 18:47:45 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/04/25 22:36:40 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int	ft_findchar(char *str, char c)
 {
-	free(*ap);
-	*ap = (NULL);
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	if (str[i] == c)
+		return (i);
+	return (-1);
 }

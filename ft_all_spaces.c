@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_all_spaces.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 22:23:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2021/04/26 20:37:09 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/12/03 21:38:07 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/04/25 22:36:12 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int	ft_all_spaces(char *str)
 {
-	free(*ap);
-	*ap = (NULL);
+	int			i;
+	int			j;
+
+	i = -1;
+	j = ft_strlen(str);
+	while ((++i < j) && (ft_isspace_nl(str[i]) && str[i] != '\n'))
+		;
+	if (i == j)
+		return (1);
+	else
+		return (0);
 }

@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 22:23:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2021/04/26 20:37:09 by vminomiy         ###   ########.fr       */
+/*   Created: 2021/03/27 02:11:19 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/04/26 20:42:03 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_exit(char *arg, int err)
 {
-	free(*ap);
-	*ap = (NULL);
+	if (err != 0)
+		ft_putstr_fd(arg, 2);
+	else
+		ft_putstr_fd("exit\n", 1);
+	exit(err);
 }

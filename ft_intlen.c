@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 07:27:36 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/08/20 07:27:46 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:19:07 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(int n)
+int	ft_intlen(int n)
 {
 	int	i;
 

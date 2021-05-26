@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_getnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 16:57:17 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:57:18 by vminomiy         ###   ########.fr       */
+/*   Created: 2021/03/25 06:27:48 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/04/25 22:37:14 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_getnbr(char const *str)
 {
-	t_list *new;
+	int		nbr;
+	int		neg;
 
-	if (!(new = malloc(sizeof(t_list))))
-		return (0);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	nbr = 0;
+	neg = 0;
+	if (*str == '-')
+	{
+		str++;
+		neg++;
+	}
+	while (*str)
+	{
+		nbr *= 10;
+		nbr = (*str - 48) + nbr;
+		str++;
+	}
+	if (neg)
+		nbr *= -1;
+	return (nbr);
 }

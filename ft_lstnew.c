@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 22:23:19 by vminomiy          #+#    #+#             */
-/*   Updated: 2021/04/26 20:37:09 by vminomiy         ###   ########.fr       */
+/*   Created: 2020/11/27 16:57:17 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/05/26 22:31:37 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list	*ft_lstnew(void *content)
 {
-	free(*ap);
-	*ap = (NULL);
+	t_list	*new;
+
+	new = NULL;
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@students.42sp.org.br    +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 04:27:38 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/08/13 18:07:51 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:10:58 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_arraylen(char **str)
+int	ft_arraylen(char **str)
 {
 	int		i;
 

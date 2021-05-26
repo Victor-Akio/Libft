@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_intcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 16:57:43 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:57:44 by vminomiy         ###   ########.fr       */
+/*   Created: 2021/03/27 22:26:30 by vminomiy          #+#    #+#             */
+/*   Updated: 2021/05/03 21:00:20 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_intcpy(int *src, int *dst, int len)
 {
-	t_list *ptr;
+	int		i;
 
-	if (*lst == NULL || del == NULL)
-		return ;
-	ptr = *lst;
-	while (ptr != NULL)
+	i = 0;
+	while (i < len)
 	{
-		*lst = ptr;
-		ft_lstdelone(*lst, del);
-		ptr = ptr->next;
+		dst[i] = src[i];
+		i++;
 	}
-	*lst = NULL;
 }

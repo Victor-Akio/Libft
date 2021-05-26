@@ -6,13 +6,13 @@
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 23:44:24 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/08/29 23:45:27 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:10:28 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_iswall(int c)
+int	ft_iswall(int c)
 {
 	if (c == '1' || c == ' ')
 		return (1);

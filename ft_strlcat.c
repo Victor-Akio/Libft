@@ -6,7 +6,7 @@
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 16:54:24 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:54:25 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/25 22:34:04 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int k;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
 	i = 0;
 	j = 0;

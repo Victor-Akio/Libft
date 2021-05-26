@@ -6,13 +6,13 @@
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 04:07:44 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:59:42 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/23 21:46:38 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_addchar(char *str, char c)
+char	*ft_addchar(char *str, char c)
 {
 	char		*res;
 	int			len;

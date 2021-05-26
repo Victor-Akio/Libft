@@ -6,11 +6,21 @@
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 16:58:05 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:58:06 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:06:22 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	div_10(int x, int len)
+{
+	while (x)
+	{
+		x = x / 10;
+		len++;
+	}
+	return (len);
+}
 
 static char	*ft_neg(int n)
 {
@@ -21,9 +31,9 @@ static char	*ft_neg(int n)
 	n *= -1;
 	tmpn = n;
 	len = 3;
-	while (tmpn /= 10)
-		len++;
-	if (!(str = (char*)malloc(sizeof(char) * len)))
+	len = div_10(tmpn, len);
+	str = (char *)malloc(sizeof(char) * len);
+	if (!str)
 		return (NULL);
 	str[--len] = '\0';
 	while (len--)
@@ -41,18 +51,19 @@ static char	*ft_zero(void)
 	char	*str;
 
 	len = 2;
-	if (!(str = (char*)malloc(sizeof(char) * len)))
+	str = (char *)malloc(sizeof(char) * len);
+	if (!str)
 		return (NULL);
 	str[0] = '0';
 	str[1] = '\0';
 	return (str);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	tmpn;
-	int	len;
-	char*str;
+	int		tmpn;
+	int		len;
+	char	*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -62,9 +73,9 @@ char		*ft_itoa(int n)
 		return (ft_neg(n));
 	tmpn = n;
 	len = 2;
-	while (tmpn /= 10)
-		len++;
-	if (!(str = (char*)malloc(sizeof(char) * len)))
+	len = div_10(tmpn, len);
+	str = (char *)malloc(sizeof(char) * len);
+	if (!str)
 		return (NULL);
 	str[--len] = '\0';
 	while (len--)

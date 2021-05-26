@@ -6,7 +6,7 @@
 /*   By: vminomiy <vminomiy@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 16:52:52 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/11/27 16:53:05 by vminomiy         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:44:50 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (end)
 		while (s1[end + beg - 1] != 0 && ft_strchr(set, s1[end + beg - 1]) != 0)
 			end--;
-	if (!(new = malloc(sizeof(char) * end + 1)))
+	new = malloc(sizeof(char) * end + 1);
+	if (!new)
 		return (NULL);
 	ft_strncpy(new, s1 + beg, end);
 	new[end] = '\0';
